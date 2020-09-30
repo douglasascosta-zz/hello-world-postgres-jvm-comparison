@@ -1,0 +1,9 @@
+FROM oracle/graalvm-ce:20.2.0-java11 as builder
+WORKDIR /usr/src/myapp
+COPY . /usr/src/myapp
+RUN ./gradlew clean bootJar
+
+FROM oracle/graalvm-ce:20.2.0-java11
+WORKDIR /usr/src/myapp
+COPY --from=builder /usr/src/myapp/build/libs/*.jar /usr/src/myapp
+ENTRYPOINT java -jar /usr/src/myapp/*.jar

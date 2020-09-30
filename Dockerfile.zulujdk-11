@@ -1,0 +1,9 @@
+FROM azul/zulu-openjdk-alpine:11 as builder
+WORKDIR /usr/src/myapp
+COPY . /usr/src/myapp
+RUN ./gradlew clean bootJar
+
+FROM azul/zulu-openjdk-alpine:11-jre
+WORKDIR /usr/src/myapp
+COPY --from=builder /usr/src/myapp/build/libs/*.jar /usr/src/myapp
+ENTRYPOINT java -jar /usr/src/myapp/*.jar

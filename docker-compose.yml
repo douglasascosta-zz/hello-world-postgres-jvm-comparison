@@ -1,0 +1,70 @@
+version: '3.1'
+
+services:
+  postgres:
+    network_mode: host
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  hello-world-openjdk-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.openjdk-11
+
+  hello-world-openj9-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.openj9-11
+
+  hello-world-oraclejdk-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.oraclejdk-11
+
+  hello-world-zulujdk-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.zulujdk-11
+
+  hello-world-graalvm-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.graalvm-11
+
+  hello-world-corettojdk-11:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.corettojdk-11
+
+  hello-world-openjdk-8:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.openjdk-8
+
+  hello-world-openj9-8:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile.openj9-8
+
+  prometheus:
+    network_mode: host
+    image: prom/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  grafana:
+    network_mode: host
+    image: grafana/grafana
+

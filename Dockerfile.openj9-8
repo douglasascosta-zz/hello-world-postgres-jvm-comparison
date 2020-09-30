@@ -1,0 +1,9 @@
+FROM adoptopenjdk:8-jdk-openj9 as builder
+WORKDIR /usr/src/myapp
+COPY . /usr/src/myapp
+RUN ./gradlew clean bootJar
+
+FROM adoptopenjdk:8-jdk-openj9
+WORKDIR /usr/src/myapp
+COPY --from=builder /usr/src/myapp/build/libs/*.jar /usr/src/myapp
+ENTRYPOINT java -jar /usr/src/myapp/*.jar
