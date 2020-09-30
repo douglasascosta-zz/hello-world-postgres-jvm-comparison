@@ -1,4 +1,4 @@
-package com.douglas.helloworldpostgreskotlinspringboot.model
+package com.douglas.hello.world.postgres.jvm.comparison.model
 
 import java.sql.Timestamp
 

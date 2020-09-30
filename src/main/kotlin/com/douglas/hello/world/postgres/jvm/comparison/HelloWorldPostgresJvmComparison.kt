@@ -1,4 +1,4 @@
-package com.douglas.helloworldpostgreskotlinspringboot
+package com.douglas.hello.world.postgres.jvm.comparison
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,4 +1,4 @@
-package com.douglas.helloworldpostgreskotlinspringboot.config
+package com.douglas.hello.world.postgres.jvm.comparison.config
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

@@ -1,4 +1,4 @@
-package com.douglas.helloworldpostgreskotlinspringboot
+package com.douglas.hello.world.postgres.jvm.comparison
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

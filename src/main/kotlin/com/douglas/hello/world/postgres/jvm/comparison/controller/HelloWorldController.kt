@@ -1,6 +1,6 @@
-package com.douglas.helloworldpostgreskotlinspringboot.controller
+package com.douglas.hello.world.postgres.jvm.comparison.controller
 
-import com.douglas.helloworldpostgreskotlinspringboot.service.HelloWorldService
+import com.douglas.hello.world.postgres.jvm.comparison.service.HelloWorldService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController

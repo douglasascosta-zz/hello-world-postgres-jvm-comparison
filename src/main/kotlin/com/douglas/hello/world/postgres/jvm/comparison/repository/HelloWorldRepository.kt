@@ -1,4 +1,4 @@
-package com.douglas.helloworldpostgreskotlinspringboot.repository
+package com.douglas.hello.world.postgres.jvm.comparison.repository
 
 import org.springframework.stereotype.Component
 import java.sql.Timestamp
