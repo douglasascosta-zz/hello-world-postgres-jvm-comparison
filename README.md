@@ -11,14 +11,16 @@ This project intends to compare JVMs for a Spring Boot with Postgres DB Microser
 - OpenJDK 8 + Oracle HotSpot
 - OpenJDK 8 + Eclipse OpenJ9
 
+### Prerequisites
+- [docker](https://www.docker.com/)
+- [docker-compose](https://docs.docker.com/compose/install/)
+- [npm](https://www.npmjs.com/)
+- [loadtest](https://www.npmjs.com/package/loadtest)
+
 ### Setup
-- Install [docker](https://www.docker.com/)
-- Install [docker-compose](https://docs.docker.com/compose/install/)
-- Install [npm](https://www.npmjs.com/)
-- Install [loadtest](https://www.npmjs.com/package/loadtest)
+- Run Postgres container: `docker-compose up -d postgres`
 
 ### Run
-- Run Postgres container: `docker-compose up -d postgres`
 - Run the JVM service that you want to test, eg: `docker-compose up -d hello-world-openj9-11`
 - Make sure it is working: `curl http://localhost:8080/hello-world`
 - Do some loadtest: `./loadtest.sh`
